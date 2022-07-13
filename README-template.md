@@ -57,9 +57,14 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-- 
+- The usual `node-sass` package I use is being deprecated so I had to figure out how to setup SASS using `dart-sass` syntax
+- How to remove the `node_modules` directory from the remote repo after accidentally pushing it up
+```
+git rm -r --cached node_modules
+git commit -m "Removed node_modules"
+git push origin main
+```
+- How to use SASS variables
 
 To see how you can add code snippets, see below:
 
