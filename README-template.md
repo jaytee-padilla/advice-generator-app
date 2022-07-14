@@ -98,6 +98,8 @@ git push origin main
   border-radius: 100%;
 }
 ```
+- How to implement generic error handling using the Fetch API.
+  - An important nuance with the Fetch API is it only [rejects a promise when a “network error is encountered, although this usually means permissions issues or similar.” Basically `fetch()` will only reject a promise if the user is offline, or some unlikely networking error occurs, such a DNS lookup failure.](https://dmitripavlutin.com/javascript-fetch-async-await/)
 
 To see how you can add code snippets, see below:
 
