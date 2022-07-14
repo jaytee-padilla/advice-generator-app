@@ -10,6 +10,10 @@
   border-radius: 10px;
   text-align: center;
 
+  blockquote {
+    font-size: 28px;
+  }
+
   #desktop-divider {
     display: none;
   }
@@ -41,4 +45,16 @@
   height: 60px;
   background-color: $neon-green;
   border-radius: 100%;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:active {
+    background-color: $text-color;
+  }
+
+  @media screen and (min-width: 600px) {
+    &:hover {
+      box-shadow: 0 0 5px $neon-green, 0 0 20px $neon-green, 0 0 40px $neon-green;
+    }
+  }
 }

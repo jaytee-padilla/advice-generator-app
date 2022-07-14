@@ -1,5 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
 * {
   box-sizing: border-box;
+}
+
+body {
+  color: hsl(193deg, 38%, 86%);
+  background-color: hsl(218deg, 23%, 16%);
+  font-family: "Manrope", sans-serif;
+}
+body .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -56,18 +70,6 @@ table {
   border-spacing: 0;
 }
 
-body {
-  color: hsl(193deg, 38%, 86%);
-  background-color: hsl(218deg, 23%, 16%);
-}
-body .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
 .attribution {
   text-align: center;
   padding: 15px;
@@ -88,6 +90,9 @@ body .container {
   background-color: hsl(217deg, 19%, 24%);
   border-radius: 10px;
   text-align: center;
+}
+.card-container blockquote {
+  font-size: 28px;
 }
 .card-container #desktop-divider {
   display: none;
@@ -117,6 +122,16 @@ body .container {
   height: 60px;
   background-color: hsl(150deg, 100%, 66%);
   border-radius: 100%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#dice-button:active {
+  background-color: hsl(193deg, 38%, 86%);
+}
+@media screen and (min-width: 600px) {
+  #dice-button:hover {
+    box-shadow: 0 0 5px hsl(150deg, 100%, 66%), 0 0 20px hsl(150deg, 100%, 66%), 0 0 40px hsl(150deg, 100%, 66%);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
