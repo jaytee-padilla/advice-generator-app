@@ -1,7 +1,12 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+body {
+  color: $text-color;
   background-color: $bg-color;
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
 }

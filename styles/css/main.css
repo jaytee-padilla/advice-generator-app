@@ -56,18 +56,25 @@ table {
   border-spacing: 0;
 }
 
-.container {
+body {
+  color: hsl(193deg, 38%, 86%);
+  background-color: hsl(218deg, 23%, 16%);
+}
+body .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: hsl(218deg, 23%, 16%);
 }
 
 .attribution {
   text-align: center;
   padding: 15px;
   bottom: 0;
+}
+.attribution a, .attribution a:visited {
+  color: white;
 }
 
 .card-container {
@@ -79,7 +86,6 @@ table {
   height: 350px;
   padding: 20px;
   background-color: hsl(217deg, 19%, 24%);
-  color: hsl(193deg, 38%, 86%);
   border-radius: 10px;
   text-align: center;
 }
@@ -99,6 +105,18 @@ table {
 }
 .card-container h5 {
   color: hsl(150deg, 100%, 66%);
+}
+
+#dice-button {
+  position: relative;
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: hsl(150deg, 100%, 66%);
+  border-radius: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -66,7 +66,7 @@ git commit -m "Removed node_modules"
 git push origin main
 ```
 - How to use SASS variables
-- How to display/hide images based on viewport size using only HTML/CSS with high browser compatibility (REALLY old versions -- 2009 and earlier -- of Internet Explorer & Firefox don't support media queries)
+- Conditional rendering of SVGs based on viewport size using only HTML/CSS with high browser compatibility (REALLY old versions -- 2009 and earlier -- of Internet Explorer & Firefox don't support media queries)
 ```scss
 #desktop-divider {
     display: none;
@@ -83,6 +83,20 @@ git push origin main
       display: block;
     }
   }
+```
+- How to display an element that visually sits on top of the edges of its parent container. The key was giving it a `position: relative` property and offsetting it's position by 30px from its parent
+```scss
+#dice-button {
+  position: relative;
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: $neon-green;
+  border-radius: 100%;
+}
 ```
 
 To see how you can add code snippets, see below:
