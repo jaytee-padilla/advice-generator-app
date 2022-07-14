@@ -2,4 +2,17 @@
   box-sizing: border-box;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.attribution {
+  text-align: center;
+  padding: 15px;
+  bottom: 0;
+}
+
 /*# sourceMappingURL=main.css.map */
