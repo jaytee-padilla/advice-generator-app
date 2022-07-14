@@ -100,6 +100,9 @@ git push origin main
 ```
 - How to implement generic error handling using the Fetch API.
   - An important nuance with the Fetch API is it only [rejects a promise when a “network error is encountered, although this usually means permissions issues or similar.” Basically `fetch()` will only reject a promise if the user is offline, or some unlikely networking error occurs, such a DNS lookup failure.](https://dmitripavlutin.com/javascript-fetch-async-await/)
+- Got stuck on the "Advice #000" heading shifting position before/after getting the `id` data from the `fetch()`. I fixed it using [this solution](https://stackoverflow.com/a/257564)
+![](./design/gifs/advice-id-shifting.gif)
+![](./design/gifs/advice-id-shifting-fixed.gif)
 
 To see how you can add code snippets, see below:
 

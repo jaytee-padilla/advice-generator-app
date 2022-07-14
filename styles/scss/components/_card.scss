@@ -10,10 +10,15 @@
   border-radius: 10px;
   text-align: center;
 
-  #advice-id {
+  #advice-id-title {
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 14px;
+
+    #advice-id {
+      display: inline-block;
+      width: 50px;
+    }
   }
 
   #quote {

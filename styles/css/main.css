@@ -91,10 +91,14 @@ table {
   border-radius: 10px;
   text-align: center;
 }
-.card-container #advice-id {
+.card-container #advice-id-title {
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 14px;
+}
+.card-container #advice-id-title #advice-id {
+  display: inline-block;
+  width: 50px;
 }
 .card-container #quote {
   font-size: 28px;

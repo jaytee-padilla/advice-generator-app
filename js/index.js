@@ -1,3 +1,6 @@
+const adviceIdEl = document.getElementById('advice-id');
+const quoteEl = document.getElementById('quote');
+
 const handleErrors = response => {
   if (!response.ok) {
     const errMsg = `An error has occurred with your API request: ${response.status}`;
@@ -20,5 +23,6 @@ const fetchAdvice = async () => {
 
 fetchAdvice()
   .then(advice => {
-    console.log(advice.slip);
+    adviceIdEl.textContent = advice.slip.id;
+    quoteEl.textContent = advice.slip.advice;
   });
