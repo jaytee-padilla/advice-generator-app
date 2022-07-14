@@ -5,7 +5,7 @@
 body {
   color: $text-color;
   background-color: $bg-color;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Manrope', sans-serif !important; // !important overrides CSS Reset specificity
   
   .container {
     display: flex;
