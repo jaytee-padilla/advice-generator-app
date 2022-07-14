@@ -2,17 +2,103 @@
   box-sizing: border-box;
 }
 
+/* http://meyerweb.com/eric/tools/css/reset/ 
+  v2.0 | 20110126
+  License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: hsl(218deg, 23%, 16%);
 }
 
 .attribution {
   text-align: center;
   padding: 15px;
   bottom: 0;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+  height: 350px;
+  padding: 20px;
+  background-color: hsl(217deg, 19%, 24%);
+  color: hsl(193deg, 38%, 86%);
+  border-radius: 10px;
+  text-align: center;
+}
+.card-container #desktop-divider {
+  display: none;
+}
+@media screen and (min-width: 600px) {
+  .card-container {
+    width: 550px;
+  }
+  .card-container #mobile-divider {
+    display: none;
+  }
+  .card-container #desktop-divider {
+    display: block;
+  }
+}
+.card-container h5 {
+  color: hsl(150deg, 100%, 66%);
 }
 
 /*# sourceMappingURL=main.css.map */

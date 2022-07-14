@@ -1,0 +1,33 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+  height: 350px;
+  padding: 20px;
+  background-color: $dark-grayish-blue;
+  color: $text-color;
+  border-radius: 10px;
+  text-align: center;
+
+  #desktop-divider {
+    display: none;
+  }
+
+  @media screen and (min-width: 600px) {
+    width: 550px;
+
+    #mobile-divider {
+      display: none;
+    }
+
+    #desktop-divider { 
+      display: block;
+    }
+  }
+
+  h5 {
+    color: $neon-green;
+  }
+}

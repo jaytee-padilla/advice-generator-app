@@ -1,24 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="styles/css/main.css">
-  
-  <title>Frontend Mentor | Advice generator app</title>
-</head>
-<body>
-  <div class="container">
-    Advice #<!-- Advice ID goes here -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles/css/main.css" />
 
-    "<!-- Advice text goes here -->"
-  </div>
-  
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://jayteepadilla.dev/">Jaytee Padilla</a>.
-  </footer>
-</body>
+    <title>Frontend Mentor | Advice generator app</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card-container">
+        <!-- Advice ID goes here -->
+        <h5>Advice #666</h5>
+
+        <!-- Advice text goes here -->
+        <blockquote>
+          "Fear leads to anger, anger leads to hate, hate leads to suffering."
+        </blockquote>
+
+        <svg
+          id="mobile-divider"
+          width="295"
+          height="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g fill="none" fill-rule="evenodd">
+            <path fill="#4F5D74" d="M0 8h122v1H0zM173 8h122v1H173z" />
+            <g transform="translate(138)" fill="#CEE3E9">
+              <rect width="6" height="16" rx="3" />
+              <rect x="14" width="6" height="16" rx="3" />
+            </g>
+          </g>
+        </svg>
+
+        <svg
+          id="desktop-divider"
+          width="444"
+          height="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g fill="none" fill-rule="evenodd">
+            <path fill="#4F5D74" d="M0 8h196v1H0zM248 8h196v1H248z" />
+            <g transform="translate(212)" fill="#CEE3E9">
+              <rect width="6" height="16" rx="3" />
+              <rect x="14" width="6" height="16" rx="3" />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://jayteepadilla.dev/">Jaytee Padilla</a>.
+    </footer>
+  </body>
 </html>

@@ -66,6 +66,24 @@ git commit -m "Removed node_modules"
 git push origin main
 ```
 - How to use SASS variables
+- How to display/hide images based on viewport size using only HTML/CSS with high browser compatibility (REALLY old versions -- 2009 and earlier -- of Internet Explorer & Firefox don't support media queries)
+```scss
+#desktop-divider {
+    display: none;
+  }
+
+  @media screen and (min-width: 600px) {
+    width: 550px;
+
+    #mobile-divider {
+      display: none;
+    }
+
+    #desktop-divider { 
+      display: block;
+    }
+  }
+```
 
 To see how you can add code snippets, see below:
 
