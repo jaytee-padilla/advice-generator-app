@@ -42,7 +42,9 @@ Users should be able to:
 
 ## Screenshot
 
-![](./design/gifs/finished-product.gif)
+<p align="center">
+  <img src="./design/gifs/finished-product.gif">
+</p>
 
 ## My Process
 
@@ -97,8 +99,12 @@ git push origin main
   - An important nuance with the Fetch API is it only [rejects a promise when a “network error is encountered, although this usually means permissions issues or similar.” Basically `fetch()` will only reject a promise if the user is offline, or some unlikely networking error occurs, such a DNS lookup failure.](https://dmitripavlutin.com/javascript-fetch-async-await/)
 
 - Got stuck on the "Advice #000" heading shifting position before/after getting the `id` data from the `fetch()`. I fixed it using [this solution](https://stackoverflow.com/a/257564)<br/>
-![](./design/gifs/advice-id-shifting.gif)
-![](./design/gifs/advice-id-shifting-fixed.gif)
+<p align="center">
+  <img src="./design/gifs/advice-id-shifting.gif">
+</p>
+<p align="center">
+  <img src="./design/gifs/advice-id-shifting-fixed.gif">
+</p>
 
 - How to fade out/in the text when new advice is generated (based on #2 of [this](https://stackoverflow.com/a/65658994) stackoverflow solution)
 ```js
