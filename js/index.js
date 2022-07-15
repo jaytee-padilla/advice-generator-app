@@ -25,7 +25,7 @@ const fetchAdvice = async () => {
 fetchAdvice()
   .then(advice => {
     adviceIdEl.textContent = advice.slip.id;
-    quoteEl.textContent = advice.slip.advice;
+    quoteEl.textContent = `"${advice.slip.advice}"`;
   });
 
   // Clicking the dice button generates and renders new advice
@@ -36,7 +36,7 @@ diceBtnEl.addEventListener('click', () => {
       // fade out/in when a new quote is generated
       setTimeout(function () {
         quoteEl.classList.remove("fade-out");
-        quoteEl.textContent = advice.slip.advice;
+        quoteEl.textContent = `"${advice.slip.advice}"`;
       }, 1000);
 
       adviceIdEl.textContent = advice.slip.id;
