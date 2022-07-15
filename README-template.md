@@ -2,7 +2,7 @@
 
 This is a solution to the [Advice generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Table of contents
+# Table of contents
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
@@ -17,9 +17,9 @@ This is a solution to the [Advice generator app challenge on Frontend Mentor](ht
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
-## Overview
+# Overview
 
-### The challenge
+## The challenge
 
 Users should be able to:
 
@@ -27,7 +27,7 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Generate a new piece of advice by clicking the dice icon
 
-### Screenshot
+## Screenshot
 
 ![](./screenshot.jpg)
 
@@ -44,9 +44,9 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-## My process
+# My process
 
-### Built with
+## Built with
 
 - Semantic HTML5 markup
 - SASS Preprocessor
@@ -54,18 +54,19 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Mobile-first workflow
 - Advice Slip API (insert URL to API here)
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
-### What I learned
+## What I learned
 
 - The usual `node-sass` package I use is being deprecated so I had to figure out how to setup SASS using `dart-sass` syntax
+
 - How to remove the `node_modules` directory from the remote repo after accidentally pushing it up
 ```
 git rm -r --cached node_modules
 git commit -m "Removed node_modules"
 git push origin main
 ```
+
 - How to use SASS variables
+
 - Conditional rendering of SVGs based on viewport size using only HTML/CSS with high browser compatibility (REALLY old versions -- 2009 and earlier -- of Internet Explorer & Firefox don't support media queries)
 ```scss
 #desktop-divider {
@@ -84,6 +85,7 @@ git push origin main
     }
   }
 ```
+
 - How to display an element that visually sits on top of the edges of its parent container. The key was giving it a `position: relative` property and offsetting it's position by 30px from its parent
 ```scss
 #dice-button {
@@ -98,11 +100,14 @@ git push origin main
   border-radius: 100%;
 }
 ```
+
 - How to implement generic error handling using the Fetch API.
   - An important nuance with the Fetch API is it only [rejects a promise when a “network error is encountered, although this usually means permissions issues or similar.” Basically `fetch()` will only reject a promise if the user is offline, or some unlikely networking error occurs, such a DNS lookup failure.](https://dmitripavlutin.com/javascript-fetch-async-await/)
+
 - Got stuck on the "Advice #000" heading shifting position before/after getting the `id` data from the `fetch()`. I fixed it using [this solution](https://stackoverflow.com/a/257564)
 ![](./design/gifs/advice-id-shifting.gif)
 ![](./design/gifs/advice-id-shifting-fixed.gif)
+
 - How to fade out/in the text when new advice is generated (based on #2 of [this](https://stackoverflow.com/a/65658994) stackoverflow solution)
 ```js
 fetchAdvice()
@@ -131,33 +136,15 @@ fetchAdvice()
 }
 ```
 
-To see how you can add code snippets, see below:
+- I can't use CSS animation properties on flexbox properties (e.g. `justify-content: space-evenly`), but can use it on the `flex-growth` related properties (e.g. `flex-grow`, `flex-shrink`, `flex-basis`, and the shorthand `flex`)
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
+## Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
 
 **Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
-### Useful resources
+## Useful resources
 
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.

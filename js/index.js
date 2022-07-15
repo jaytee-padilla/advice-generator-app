@@ -33,7 +33,7 @@ diceBtnEl.addEventListener('click', () => {
   fetchAdvice()
     .then(advice => {
       quoteEl.classList.add('fade-out');
-      // fade out/in everytime a new quote is generated
+      // fade out/in when a new quote is generated
       setTimeout(function () {
         quoteEl.classList.remove("fade-out");
         quoteEl.textContent = advice.slip.advice;
