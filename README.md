@@ -1,93 +1,133 @@
-# Frontend Mentor - Advice generator app
+# Frontend Mentor - Advice generator app solution
 
-![Design preview for the Advice generator app coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Advice Generator App challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db).
 
-## Welcome! 👋
+# Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [Links](#links)
+  - [Author](#author)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+- [My process](#my-process)
+  - [Skills](#skills)
+  - [What I learned](#what-i-learned)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+# Overview
+## Links
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+- **Solution URL** - [https://github.com/jaytee-padilla/advice-generator-app](https://github.com/jaytee-padilla/advice-generator-app)
+- **Live Site URL** - [https://jaytee-advice-generator.netlify.app/](https://jaytee-advice-generator.netlify.app/)
 
-## The challenge
+## Author
 
-Your challenge is to build out this advice generator app using the [Advice Slip API](https://api.adviceslip.com) and get it looking as close to the design as possible.
+- [Jaytee Padilla](https://jayteepadilla.dev/)
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+## The Challenge
 
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for the app depending on their device's screen size
 - See hover states for all interactive elements on the page
 - Generate a new piece of advice by clicking the dice icon
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+## Screenshot
 
-## Where to find everything
+![](./design/gifs/finished-product.gif)
+# My Process
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design.
+## Skills
+- Semantic HTML5 markup
+- SASS Preprocessor
+- CSS animation
+- Flexbox
+- Javascript
+- Fetch API
+- Mobile-first workflow
+- [Advice Slip API](https://api.adviceslip.com/)
+- Git
+- Netlify for deployment
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`.
+## What I Learned
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+- The usual `node-sass` package I use is being deprecated so I had to figure out how to setup SASS using `dart-sass` syntax
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+- How to remove the `node_modules` directory from the remote repo after accidentally pushing it up
+```
+git rm -r --cached node_modules
+git commit -m "Removed node_modules"
+git push origin main
+```
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- SASS variables usage
 
-## Building your project
+- Conditional rendering of SVGs based on viewport size using only HTML/CSS with high browser compatibility (REALLY old versions -- 2009 and earlier -- of Internet Explorer & Firefox don't support media queries)
+```scss
+#desktop-divider {
+    display: none;
+  }
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+  @media screen and (min-width: 600px) {
+    width: 550px;
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+    #mobile-divider {
+      display: none;
+    }
 
-## Deploying your project
+    #desktop-divider { 
+      display: block;
+    }
+  }
+```
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+- How to display an element that visually sits on top of the edges of its parent container. The key was giving it a `position: relative` property and offsetting it's position by 30px from its parent
+```scss
+#dice-button {
+  position: relative;
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: $neon-green;
+  border-radius: 100%;
+}
+```
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+- How to implement generic error handling using the Fetch API.
+  - An important nuance with the Fetch API is it only [rejects a promise when a “network error is encountered, although this usually means permissions issues or similar.” Basically `fetch()` will only reject a promise if the user is offline, or some unlikely networking error occurs, such a DNS lookup failure.](https://dmitripavlutin.com/javascript-fetch-async-await/)
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+- Got stuck on the "Advice #000" heading shifting position before/after getting the `id` data from the `fetch()`. I fixed it using [this solution](https://stackoverflow.com/a/257564)
+![](./design/gifs/advice-id-shifting.gif)
+![](./design/gifs/advice-id-shifting-fixed.gif)
 
-## Create a custom `README.md`
+- How to fade out/in the text when new advice is generated (based on #2 of [this](https://stackoverflow.com/a/65658994) stackoverflow solution)
+```js
+fetchAdvice()
+    .then(advice => {
+      quoteEl.classList.add('fade-out');
+      // fade out/in when a new quote is generated
+      setTimeout(function () {
+        quoteEl.classList.remove("fade-out");
+        quoteEl.textContent = advice.slip.advice;
+      }, 1000);
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+      adviceIdEl.textContent = advice.slip.id;
+    });
+```
+```scss
+.quote {
+    font-size: 28px;
+    font-weight: 800;
+    opacity: 1;
+    transition: 1s;
+  }
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+.fade-out {
+  opacity: 0;
+  transition: 1s;
+}
+```
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+- I can't use CSS animation properties on flexbox properties (e.g. `justify-content: space-evenly`), but can use it on the `flex-growth` related properties (e.g. `flex-grow`, `flex-shrink`, `flex-basis`, and the shorthand `flex`)
