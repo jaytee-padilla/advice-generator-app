@@ -100,9 +100,15 @@ table {
   display: inline-block;
   width: 50px;
 }
-.card-container #quote {
+.card-container .quote {
   font-size: 28px;
   font-weight: 800;
+  opacity: 1;
+  transition: 1s;
+}
+.card-container .fade-out {
+  opacity: 0;
+  transition: 1s;
 }
 .card-container #desktop-divider {
   display: none;

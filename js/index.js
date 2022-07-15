@@ -1,5 +1,5 @@
 const adviceIdEl = document.getElementById('advice-id');
-const quoteEl = document.getElementById('quote');
+const quoteEl = document.querySelector('.quote');
 const diceBtnEl = document.getElementById('dice-button');
 
 const handleErrors = response => {
@@ -32,7 +32,13 @@ fetchAdvice()
 diceBtnEl.addEventListener('click', () => {
   fetchAdvice()
     .then(advice => {
+      quoteEl.classList.add('fade-out');
+      // fade out/in everytime a new quote is generated
+      setTimeout(function () {
+        quoteEl.classList.remove("fade-out");
+        quoteEl.textContent = advice.slip.advice;
+      }, 1000);
+
       adviceIdEl.textContent = advice.slip.id;
-      quoteEl.textContent = advice.slip.advice;
     });
 });

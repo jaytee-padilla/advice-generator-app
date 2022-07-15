@@ -21,9 +21,16 @@
     }
   }
 
-  #quote {
+  .quote {
     font-size: 28px;
     font-weight: 800;
+    opacity: 1;
+    transition: 1s;
+  }
+
+  .fade-out {
+    opacity: 0;
+    transition: 1s;
   }
 
   #desktop-divider {
@@ -37,7 +44,7 @@
       display: none;
     }
 
-    #desktop-divider { 
+    #desktop-divider {
       display: block;
     }
   }
@@ -66,7 +73,8 @@
 
   @media screen and (min-width: 600px) {
     &:hover {
-      box-shadow: 0 0 5px $neon-green, 0 0 20px $neon-green, 0 0 40px $neon-green;
+      box-shadow: 0 0 5px $neon-green, 0 0 20px $neon-green,
+        0 0 40px $neon-green;
     }
   }
 }

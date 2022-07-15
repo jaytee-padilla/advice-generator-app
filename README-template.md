@@ -103,6 +103,33 @@ git push origin main
 - Got stuck on the "Advice #000" heading shifting position before/after getting the `id` data from the `fetch()`. I fixed it using [this solution](https://stackoverflow.com/a/257564)
 ![](./design/gifs/advice-id-shifting.gif)
 ![](./design/gifs/advice-id-shifting-fixed.gif)
+- How to fade out/in the text when new advice is generated (based on #2 of [this](https://stackoverflow.com/a/65658994) stackoverflow solution)
+```js
+fetchAdvice()
+    .then(advice => {
+      quoteEl.classList.add('fade-out');
+      // fade out/in everytime a new quote is generated
+      setTimeout(function () {
+        quoteEl.classList.remove("fade-out");
+        quoteEl.textContent = advice.slip.advice;
+      }, 1000);
+
+      adviceIdEl.textContent = advice.slip.id;
+    });
+```
+```scss
+.quote {
+    font-size: 28px;
+    font-weight: 800;
+    opacity: 1;
+    transition: 1s;
+  }
+
+.fade-out {
+  opacity: 0;
+  transition: 1s;
+}
+```
 
 To see how you can add code snippets, see below:
 
