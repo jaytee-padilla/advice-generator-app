@@ -1,42 +1,17 @@
-# Frontend Mentor - Advice generator app solution
-
-This is a solution to the [Advice Generator App challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db).
-
 # Table of contents
 
 - [Overview](#overview)
+  - [Skills](#skills)
   - [Links](#links)
   - [Author](#author)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+- [Screenshot](#screenshot)
 - [My process](#my-process)
-  - [Skills](#skills)
   - [What I learned](#what-i-learned)
 
-# Overview
-## Links
+## Overview
 
-- **Solution URL** - [https://github.com/jaytee-padilla/advice-generator-app](https://github.com/jaytee-padilla/advice-generator-app)
-- **Live Site URL** - [https://jaytee-advice-generator.netlify.app/](https://jaytee-advice-generator.netlify.app/)
-
-## Author
-
-- [Jaytee Padilla](https://jayteepadilla.dev/)
-
-## The Challenge
-
-Users should be able to:
-
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Generate a new piece of advice by clicking the dice icon
-
-## Screenshot
-
-![](./design/gifs/finished-product.gif)
-# My Process
-
-## Skills
+### Skills
 - Semantic HTML5 markup
 - SASS Preprocessor
 - CSS animation
@@ -48,7 +23,30 @@ Users should be able to:
 - Git
 - Netlify for deployment
 
-## What I Learned
+### Links
+
+- **Solution URL** - [https://github.com/jaytee-padilla/advice-generator-app](https://github.com/jaytee-padilla/advice-generator-app)
+- **Live Site URL** - [https://jaytee-advice-generator.netlify.app/](https://jaytee-advice-generator.netlify.app/)
+
+### Author
+
+- [Jaytee Padilla](https://jayteepadilla.dev/)
+
+### The Challenge
+
+Users should be able to:
+
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Generate a new piece of advice by clicking the dice icon
+
+## Screenshot
+
+![](./design/gifs/finished-product.gif)
+
+## My Process
+
+### What I Learned
 
 - The usual `node-sass` package I use is being deprecated so I had to figure out how to setup SASS using `dart-sass` syntax
 
@@ -131,3 +129,7 @@ fetchAdvice()
 ```
 
 - I can't use CSS animation properties on flexbox properties (e.g. `justify-content: space-evenly`), but can use it on the `flex-growth` related properties (e.g. `flex-grow`, `flex-shrink`, `flex-basis`, and the shorthand `flex`)
+
+# Frontend Mentor - Advice generator app solution
+
+This is a solution to the [Advice Generator App challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db).
